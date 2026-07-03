@@ -1,0 +1,129 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Broder(1997)]{Broder1997}
+Andrei~Z. Broder.
+\newblock On the resemblance and containment of documents.
+\newblock In \emph{Proceedings of the Compression and Complexity of Sequences},
+  pages 21--29. IEEE, 1997.
+
+\bibitem[Charikar(2002)]{Charikar2002}
+Moses Charikar.
+\newblock Similarity estimation techniques from rounding algorithms.
+\newblock In \emph{Proceedings of the 34th Annual ACM Symposium on Theory of
+  Computing (STOC)}, pages 380--388, 2002.
+\newblock \doi{10.1145/509907.509965}.
+
+\bibitem[Dolan and Brockett(2005)]{Dolan2005}
+William~B. Dolan and Chris Brockett.
+\newblock Automatically constructing a corpus of sentential paraphrases.
+\newblock In \emph{Proceedings of the Third International Workshop on
+  Paraphrasing (IWP)}, 2005.
+
+\bibitem[Ekzhu(2017)]{datasketch}
+Ekzhu.
+\newblock datasketch: Big data looks small.
+\newblock \url{https://github.com/ekzhu/datasketch}, 2017.
+
+\bibitem[Gao et~al.(2020)Gao, Biderman, Black, Golding, Hoppe, Foster, Phang,
+  He, Thite, Nabeshima, Presser, and Leahy]{Gao2020}
+Leo Gao, Stella Biderman, Sid Black, Laurence Golding, Travis Hoppe, Charles
+  Foster, Jason Phang, Horace He, Anish Thite, Noa Nabeshima, Shawn Presser,
+  and Connor Leahy.
+\newblock The pile: An 800{GB} dataset of diverse text for language modeling.
+\newblock \emph{arXiv preprint arXiv:2101.00027}, 2020.
+
+\bibitem[Indyk and Motwani(1998)]{IndykMotwani1998}
+Piotr Indyk and Rajeev Motwani.
+\newblock Approximate nearest neighbors: Towards removing the curse of
+  dimensionality.
+\newblock In \emph{Proceedings of the 30th Annual ACM Symposium on Theory of
+  Computing (STOC)}, pages 604--613, 1998.
+\newblock \doi{10.1145/276698.276876}.
+
+\bibitem[Lee et~al.(2022)Lee, Ippolito, Nystrom, Zhang, Eck, Callison-Burch,
+  and Carlini]{Lee2022}
+Katherine Lee, Daphne Ippolito, Andrew Nystrom, Chiyuan Zhang, Douglas Eck,
+  Chris Callison-Burch, and Nicholas Carlini.
+\newblock Deduplicating training data makes language models better.
+\newblock In \emph{Proceedings of the 60th Annual Meeting of the Association
+  for Computational Linguistics (ACL)}, pages 8424--8445, 2022.
+\newblock \doi{10.18653/v1/2022.acl-long.577}.
+
+\bibitem[Leskovec et~al.(2014)Leskovec, Rajaraman, and Ullman]{Leskovec2014}
+Jure Leskovec, Anand Rajaraman, and Jeffrey~D. Ullman.
+\newblock \emph{Mining of Massive Datasets}.
+\newblock Cambridge University Press, 2nd edition, 2014.
+
+\bibitem[Manku et~al.(2007)Manku, Jain, and Sarma]{Manku2007}
+Gurmeet~Singh Manku, Arvind Jain, and Anish~Das Sarma.
+\newblock Detecting near-duplicates for web crawling.
+\newblock In \emph{Proceedings of the 16th International World Wide Web
+  Conference (WWW)}, pages 141--150, 2007.
+\newblock \doi{10.1145/1242572.1242592}.
+
+\bibitem[Penedo et~al.(2023)Penedo, Malartic, Hesslow, Cojocaru, Cappelli,
+  Alobeidli, Pannier, Almazrouei, and Launay]{Penedo2023}
+Guilherme Penedo, Quentin Malartic, Daniel Hesslow, Ruxandra Cojocaru,
+  Alessandro Cappelli, Hamza Alobeidli, Baptiste Pannier, Ebtesam Almazrouei,
+  and Julien Launay.
+\newblock The {RefinedWeb} dataset for {Falcon LLM}: Outperforming curated
+  corpora with web data, and web data only.
+\newblock \emph{arXiv preprint arXiv:2306.01116}, 2023.
+
+\bibitem[Schleimer et~al.(2003)Schleimer, Wilkerson, and Aiken]{Schleimer2003}
+Saul Schleimer, Daniel~S. Wilkerson, and Alex Aiken.
+\newblock Winnowing: Local algorithms for document fingerprinting.
+\newblock In \emph{Proceedings of the ACM SIGMOD International Conference on
+  Management of Data}, pages 76--85, 2003.
+\newblock \doi{10.1145/872757.872770}.
+
+\bibitem[Slaney and Casey(2008)]{Slaney2008}
+Malcolm Slaney and Michael Casey.
+\newblock Locality-sensitive hashing for finding nearest neighbors.
+\newblock volume~25, pages 128--131, 2008.
+\newblock \doi{10.1109/MSP.2007.914237}.
+
+\bibitem[Wang et~al.(2018)Wang, Singh, Michael, Hill, Levy, and
+  Bowman]{Wang2018}
+Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and
+  Samuel~R. Bowman.
+\newblock {GLUE}: A multi-task benchmark and analysis platform for natural
+  language understanding.
+\newblock In \emph{Proceedings of the EMNLP Workshop BlackboxNLP}, pages
+  353--355, 2018.
+\newblock \doi{10.18653/v1/W18-5446}.
+
+\bibitem[Wang(2003)]{Wang2003}
+Avery Li-Chun Wang.
+\newblock An industrial strength audio search algorithm.
+\newblock In \emph{Proceedings of the 4th International Conference on Music
+  Information Retrieval (ISMIR)}, pages 7--13, 2003.
+
+\bibitem[Wenzek et~al.(2020)Wenzek, Lachaux, Conneau, Chaudhary, Guzm{\'a}n,
+  Joulin, and Grave]{Wenzek2020}
+Guillaume Wenzek, Marie-Anne Lachaux, Alexis Conneau, Vishrav Chaudhary,
+  Francisco Guzm{\'a}n, Armand Joulin, and Edouard Grave.
+\newblock {CCNet}: Extracting high quality monolingual datasets from web crawl
+  data, 2020.
+
+\bibitem[Zhang et~al.(2024)Zhang, Vallis, Bumin, Vakharia, and
+  Bursztein]{Zhang2023}
+Marina Zhang, Owen Vallis, Aysegul Bumin, Tanay Vakharia, and Elie Bursztein.
+\newblock {RETSim}: Resilient and efficient text similarity.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2024.
+\newblock \doi{10.48550/arXiv.2311.17264}.
+
+\bibitem[Zhu et~al.(2016)Zhu, Nargesian, Pu, and Miller]{Zhu2016}
+Ekzhu Zhu, Fatemeh Nargesian, Ken~Q. Pu, and Renée~J. Miller.
+\newblock {LSH} ensemble: Internet-scale domain search.
+\newblock In \emph{Proceedings of the VLDB Endowment}, volume~9, pages
+  1185--1196, 2016.
+\newblock \doi{10.14778/2994509.2994534}.
+
+\end{thebibliography}

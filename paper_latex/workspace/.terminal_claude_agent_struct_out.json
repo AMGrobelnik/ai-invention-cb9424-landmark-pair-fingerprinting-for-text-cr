@@ -1,0 +1,14 @@
+{
+  "title": "Landmark-Pair Text Fingerprinting vs MinHash",
+  "summary": "Generated a complete 10-page publication-ready LaTeX paper titled 'Landmark-Pair Fingerprinting for Text: Cross-Domain Transfer Without Advantage'. The paper covers: Abstract, Introduction (with contributions), Related Work (classical/industrial approaches and audio fingerprinting), Methods (landmark extraction, landmark pair hashing, inverted index), Experiments (setup, GLUE MRPC results, synthetic structural edits results, ablation study, scalability), Discussion (why landmark-pair fails, benchmark critique, why offset hurts, implications), and Conclusion. All 3 figures from <available_figures> are included as figure* environments (21:9 aspect ratio, full-width): fig_mrpc_results_v0.jpg (GLUE MRPC comparison), fig_synthetic_results_v0.jpg (synthetic structural edits), and fig_ablation_v0.jpg (positional offset ablation). Tables 1-3 accompany the figures. Bibliography contains 15 verified BibTeX entries covering Broder 1997 MinHash, Wang 2003 Shazam, Lee 2022 deduplication, Charikar 2002 SimHash, Schleimer 2003 Winnowing, Zhu 2016 LSH Ensemble, Zhang 2023 RETSim, Wang 2018 GLUE, Dolan 2005 MRPC, Leskovec 2014 Mining of Massive Datasets, Manku 2007 near-duplicate detection, Gao 2020 The Pile, Penedo 2023 RefinedWeb, Wenzek 2020 CCNet, IndykMotwani 1998 LSH, Slaney 2008 LSH, and datasketch. Compiled successfully with pdflatex + bibtex.original + 2x pdflatex to paper.pdf (10 pages, ~4.5MB). Visual review confirmed all pages render cleanly with no layout issues, overlapping figures, or formatting problems.",
+  "out_expected_files": {
+    "paper_tex_path": "paper.tex",
+    "paper_pdf_path": "paper.pdf",
+    "references_bib_path": "references.bib",
+    "figure_paths": [
+      "figures/fig_mrpc_results_v0.jpg",
+      "figures/fig_synthetic_results_v0.jpg",
+      "figures/fig_ablation_v0.jpg"
+    ]
+  }
+}

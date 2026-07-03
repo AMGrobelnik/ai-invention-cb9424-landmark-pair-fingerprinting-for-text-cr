@@ -1,0 +1,89 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{Lee2022}
+\citation{Broder1997}
+\citation{IndykMotwani1998,Slaney2008}
+\citation{Lee2022,Gao2020,Penedo2023}
+\citation{Leskovec2014,Manku2007}
+\citation{Manku2007,Wenzek2020,Lee2022}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\citation{Broder1997}
+\citation{datasketch,Zhu2016}
+\citation{Wang2003}
+\citation{Broder1997}
+\citation{Lee2022,Gao2020,Penedo2023}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Classical and Industrial Approaches}{2}{subsection.2.1}\protected@file@percent }
+\citation{Broder1997}
+\citation{Zhu2016}
+\citation{datasketch}
+\citation{Schleimer2003}
+\citation{Charikar2002}
+\citation{Zhang2023}
+\citation{Wang2003}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Audio Fingerprinting and Cross-Domain Transfer}{3}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Methods}{3}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Landmark Extraction}{3}{subsection.3.1}\protected@file@percent }
+\citation{Wang2018,Dolan2005}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Landmark Pair Hashing}{4}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Inverted Index and Retrieval}{4}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{4}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Setup}{4}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Recall at precision $\geq $0.90 across methods on GLUE MRPC paraphrase detection. MinHash Jaccard achieves 0.364 recall, landmark-pair achieves 0.109. Removing positional offset improves landmark-pair to 0.152, indicating offset adds noise. MinHash Containment fails completely (0.0) on paraphrases, suggesting asymmetric metrics handle length mismatch but struggle with semantic variation.}}{5}{figure.1}\protected@file@percent }
+\newlabel{fig:mrpc_results}{{1}{5}{Recall at precision $\geq $0.90 across methods on GLUE MRPC paraphrase detection. MinHash Jaccard achieves 0.364 recall, landmark-pair achieves 0.109. Removing positional offset improves landmark-pair to 0.152, indicating offset adds noise. MinHash Containment fails completely (0.0) on paraphrases, suggesting asymmetric metrics handle length mismatch but struggle with semantic variation}{figure.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Performance on GLUE MRPC paraphrase detection.}}{5}{table.1}\protected@file@percent }
+\newlabel{tab:mrpc}{{1}{5}{Performance on GLUE MRPC paraphrase detection}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Results on GLUE MRPC}{5}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Results on Synthetic Structural Edits}{5}{subsection.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Recall at precision $\geq $0.90 across all methods on synthetic structural-edit variants. All methods achieve perfect recall (1.0) across insertion, deletion, reordering, and embedding variants. This indicates the synthetic benchmark's shared-text assumption makes the problem trivial---all modern methods exploit high Jaccard overlap in the preserved core.}}{6}{figure.2}\protected@file@percent }
+\newlabel{fig:synthetic_results}{{2}{6}{Recall at precision $\geq $0.90 across all methods on synthetic structural-edit variants. All methods achieve perfect recall (1.0) across insertion, deletion, reordering, and embedding variants. This indicates the synthetic benchmark's shared-text assumption makes the problem trivial---all modern methods exploit high Jaccard overlap in the preserved core}{figure.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Recall@P$\geq $0.90 on synthetic structural edits. All methods achieve perfect recall (1.0).}}{6}{table.2}\protected@file@percent }
+\newlabel{tab:synthetic}{{2}{6}{Recall@P$\geq $0.90 on synthetic structural edits. All methods achieve perfect recall (1.0)}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Ablation: Positional Offset is Harmful}{6}{subsection.4.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Ablation study: effect of positional offset on landmark-pair performance.}}{6}{table.3}\protected@file@percent }
+\newlabel{tab:ablation}{{3}{6}{Ablation study: effect of positional offset on landmark-pair performance}{table.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Effect of removing positional offset from landmark-pair hashing. On MRPC, recall improves from 0.109 (with offset) to 0.152 (without offset). Difference significant at $\alpha =0.05$ ($z=-4.68$, $p<0.001$). On synthetic data, no difference (both achieve 1.0). Offset acts as noise on realistic text.}}{7}{figure.3}\protected@file@percent }
+\newlabel{fig:ablation}{{3}{7}{Effect of removing positional offset from landmark-pair hashing. On MRPC, recall improves from 0.109 (with offset) to 0.152 (without offset). Difference significant at $\alpha =0.05$ ($z=-4.68$, $p<0.001$). On synthetic data, no difference (both achieve 1.0). Offset acts as noise on realistic text}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Scalability and Efficiency}{7}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{7}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Why Landmark-Pair Fails on Text}{7}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{1.\ Landmark Brittleness.}{7}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{2.\ Scale Mismatch.}{8}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{3.\ Containment Already Solves the Problem.}{8}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Benchmark Critique: The Synthetic Dataset is Misleading}{8}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Why the Offset Hurts on Real Data}{8}{subsection.5.3}\protected@file@percent }
+\bibstyle{plainnat}
+\bibdata{references}
+\bibcite{Broder1997}{{1}{1997}{{Broder}}{{}}}
+\bibcite{Charikar2002}{{2}{2002}{{Charikar}}{{}}}
+\bibcite{Dolan2005}{{3}{2005}{{Dolan and Brockett}}{{}}}
+\bibcite{datasketch}{{4}{2017}{{Ekzhu}}{{}}}
+\bibcite{Gao2020}{{5}{2020}{{Gao et~al.}}{{Gao, Biderman, Black, Golding, Hoppe, Foster, Phang, He, Thite, Nabeshima, Presser, and Leahy}}}
+\bibcite{IndykMotwani1998}{{6}{1998}{{Indyk and Motwani}}{{}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Implications for Cross-Domain Transfer}{9}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}\protected@file@percent }
+\bibcite{Lee2022}{{7}{2022}{{Lee et~al.}}{{Lee, Ippolito, Nystrom, Zhang, Eck, Callison-Burch, and Carlini}}}
+\bibcite{Leskovec2014}{{8}{2014}{{Leskovec et~al.}}{{Leskovec, Rajaraman, and Ullman}}}
+\bibcite{Manku2007}{{9}{2007}{{Manku et~al.}}{{Manku, Jain, and Sarma}}}
+\bibcite{Penedo2023}{{10}{2023}{{Penedo et~al.}}{{Penedo, Malartic, Hesslow, Cojocaru, Cappelli, Alobeidli, Pannier, Almazrouei, and Launay}}}
+\bibcite{Schleimer2003}{{11}{2003}{{Schleimer et~al.}}{{Schleimer, Wilkerson, and Aiken}}}
+\bibcite{Slaney2008}{{12}{2008}{{Slaney and Casey}}{{}}}
+\bibcite{Wang2018}{{13}{2018}{{Wang et~al.}}{{Wang, Singh, Michael, Hill, Levy, and Bowman}}}
+\bibcite{Wang2003}{{14}{2003}{{Wang}}{{}}}
+\bibcite{Wenzek2020}{{15}{2020}{{Wenzek et~al.}}{{Wenzek, Lachaux, Conneau, Chaudhary, Guzm{\'a}n, Joulin, and Grave}}}
+\bibcite{Zhang2023}{{16}{2024}{{Zhang et~al.}}{{Zhang, Vallis, Bumin, Vakharia, and Bursztein}}}
+\bibcite{Zhu2016}{{17}{2016}{{Zhu et~al.}}{{Zhu, Nargesian, Pu, and Miller}}}
+\gdef \@abspage@last{10}
