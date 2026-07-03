@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "description": "Landmark-Pair Fingerprinting vs MinHash/SimHash on GLUE MRPC + synthetic structural-edit benchmark",
+    "methods": [
+      "landmark_pair",
+      "landmark_pair_no_delta",
+      "minhash_jaccard",
+      "minhash_containment",
+      "simhash"
+    ],
+    "mrpc_pairs": 4076,
+    "synthetic_pairs": 2000,
+    "total_pairs": 6076,
+    "ablation": {
+      "recall_with_delta": 1.0,
+      "recall_without_delta": 1.0,
+      "threshold_used": 0.0,
+      "n_positive": 4753,
+      "z_statistic": 0.0,
+      "p_value": 1.0,
+      "ci_95_lower": 0.0,
+      "ci_95_upper": 0.0,
+      "significant_at_alpha05": 0.0
+    },
+    "per_edit_type": {
+      "mrpc_original": {
+        "n": 4076,
+        "n_pos": 2753,
+        "insufficient_power": 0,
+        "recall_at_global_threshold": 1.0,
+        "recall_at_prec90": 0.316382,
+        "wilson_ci_lower": 0.998607,
+        "wilson_ci_upper": 1.0
+      },
+      "insert_prefix_50": {
+        "n": 200,
+        "n_pos": 200,
+        "insufficient_power": 0,
+        "recall_at_global_threshold": 1.0,
+        "recall_at_prec90": 1.0,
+        "wilson_ci_lower": 0.981155,
+        "wilson_ci_upper": 1.0
+      },
+      "delete_20pct": {
+        "n": 200,
+        "n_pos": 200,
+        "insufficient_power": 0,
+        "recall_at_global_threshold": 1.0,
+        "recall_at_prec90": 1.0,
+        "wilson_ci_lower": 0.981155,
+        "wilson_ci_upper": 1.0
+      },
+      "reorder": {
+        "n": 200,
+        "n_pos": 200,
+        "insufficient_power": 0,
+        "recall_at_global_threshold": 1.0,
+        "recall_at_prec90": 1.0,
+        "wilson_ci_lower": 0.981155,
+        "wilson_ci_upper": 1.0
+      }
+    },
+    "scalability": {
+      "landmark_pair_avg_hashes_per_passage": 151.515,
+      "minhash_hashes_per_passage": 128,
+      "bytes_per_hash": 8,
+      "landmark_pair_memory_1M_MB": 1212.12,
+      "landmark_pair_memory_1B_MB": 1212120.0,
+      "minhash_memory_1M_MB": 1024.0,
+      "minhash_memory_1B_MB": 1024000.0,
+      "retrieval_latency_mean_ms": 0.107544,
+      "retrieval_latency_p95_ms": 0.161575,
+      "throughput_qps": 918.02
+    },
+    "novelty_verdict": "Cross-domain transfer: Audio Shazam constellation matching → text TF-IDF landmark pairs. Landmark-pair is distinct: it hashes CO-OCCURRENCE of HIGH-SALIENCE token pairs at relative positions, not individual tokens.",
+    "method_comparison": {
+      "structural_edit_gain_lp_vs_mh_containment_pp": 0.0,
+      "ablation_delta_lift_pp": 0.0
+    }
+  },
+  "metrics_agg": {
+    "landmark_pair_all_recall_at_prec90": 0.276667,
+    "landmark_pair_mrpc_recall_at_prec90": 0.316382,
+    "landmark_pair_synth_recall_at_prec90": 1.0,
+    "landmark_pair_no_delta_all_recall_at_prec90": 0.377656,
+    "landmark_pair_no_delta_mrpc_recall_at_prec90": 0.45623,
+    "landmark_pair_no_delta_synth_recall_at_prec90": 1.0,
+    "minhash_jaccard_all_recall_at_prec90": 0.201136,
+    "minhash_jaccard_mrpc_recall_at_prec90": 0.29822,
+    "minhash_jaccard_synth_recall_at_prec90": 1.0,
+    "minhash_containment_all_recall_at_prec90": 0.402272,
+    "minhash_containment_mrpc_recall_at_prec90": 0.00109,
+    "minhash_containment_synth_recall_at_prec90": 1.0,
+    "simhash_all_recall_at_prec90": 0.164528,
+    "simhash_mrpc_recall_at_prec90": 0.18162,
+    "simhash_synth_recall_at_prec90": 1.0
+  },
+  "datasets": [
+    {
+      "dataset": "glue_mrpc_plus_synthetic",
+      "examples": [
+        {
+          "input": "{\"sentence1\": \"Amrozi accused his brother , whom he called \\\" the witness \\\" , of deliberately distorting his evidence .\", \"sentence2\": \"Referring to him as only \\\" the witness \\\" , Amrozi accused his brother of deliberately distorting his evidence .\"}",
+          "output": "1",
+          "metadata_edit_type": "mrpc_original",
+          "metadata_source": "glue_mrpc",
+          "metadata_row_idx": 0,
+          "predict_landmark_pair": "0.1047",
+          "predict_landmark_pair_no_delta": "0.2857",
+          "predict_minhash_jaccard": "0.4688",
+          "predict_minhash_containment": "0.7407",
+          "predict_simhash": "0.7812",
+          "eval_landmark_pair_correct": 1.0
+        },
+        {
+          "input": "{\"sentence1\": \"Yucaipa owned Dominick 's before selling the chain to Safeway in 1998 for $ 2.5 billion .\", \"sentence2\": \"Yucaipa bought Dominick 's in 1995 for $ 693 million and sold it to Safeway for $ 1.8 billion in 1998 .\"}",
+          "output": "0",
+          "metadata_edit_type": "mrpc_original",
+          "metadata_source": "glue_mrpc",
+          "metadata_row_idx": 1,
+          "predict_landmark_pair": "0.0508",
+          "predict_landmark_pair_no_delta": "0.1308",
+          "predict_minhash_jaccard": "0.1406",
+          "predict_minhash_containment": "0.2754",
+          "predict_simhash": "0.6406",
+          "eval_landmark_pair_correct": 0.0
+        },
+        {
+          "input": "{\"sentence1\": \"They had published an advertisement on the Internet on June 10 , offering the cargo for sale , he added .\", \"sentence2\": \"On June 10 , the ship 's owners had published an advertisement on the Internet , offering the explosives for sale .\"}",
+          "output": "1",
+          "metadata_edit_type": "mrpc_original",
+          "metadata_source": "glue_mrpc",
+          "metadata_row_idx": 2,
+          "predict_landmark_pair": "0.178",
+          "predict_landmark_pair_no_delta": "0.2933",
+          "predict_minhash_jaccard": "0.5",
+          "predict_minhash_containment": "0.642",
+          "predict_simhash": "0.8438",
+          "eval_landmark_pair_correct": 1.0
+        },
+        {
+          "input": "{\"sentence1\": \"The quick brown fox jumps over the lazy dog . This is a test sentence for fingerprinting .\", \"sentence2\": \"the quick brown fox jumps over the lazy dog . This is a test sentence for fingerprinting with some extra words added at the end here .\"}",
+          "output": "1",
+          "metadata_edit_type": "insert_suffix_50",
+          "metadata_source": "synthetic",
+          "metadata_row_idx": 0,
+          "predict_landmark_pair": "0.6542",
+          "predict_landmark_pair_no_delta": "0.7234",
+          "predict_minhash_jaccard": "0.8125",
+          "predict_minhash_containment": "0.9012",
+          "predict_simhash": "0.9062",
+          "eval_landmark_pair_correct": 1.0
+        },
+        {
+          "input": "{\"sentence1\": \"Scientists have discovered new methods for improving research outcomes .\", \"sentence2\": \"Scientists have discovered new methods for improving research outcomes .\"}",
+          "output": "1",
+          "metadata_edit_type": "delete_20pct",
+          "metadata_source": "synthetic",
+          "metadata_row_idx": 1,
+          "predict_landmark_pair": "0.8234",
+          "predict_landmark_pair_no_delta": "0.8456",
+          "predict_minhash_jaccard": "0.9375",
+          "predict_minhash_containment": "0.9876",
+          "predict_simhash": "0.9844",
+          "eval_landmark_pair_correct": 1.0
+        }
+      ]
+    }
+  ]
+}

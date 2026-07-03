@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "description": "Near-duplicate text passage detection benchmark (mini demo subset)",
+    "sources": ["wikipedia-synthetic", "quora-duplicates"],
+    "edit_types": ["insertion", "deletion", "embedding", "reorder", "control", "paraphrase", "negative"],
+    "schema_fields": {
+      "input": "JSON string with original_text and variant_text (or sentence1/sentence2)",
+      "output": "'true' if near-duplicate, 'false' otherwise",
+      "metadata_edit_type": "type of structural edit applied",
+      "metadata_edit_distance_jaccard": "token-level Jaccard similarity between texts"
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "wikipedia-synthetic",
+      "examples": [
+        {
+          "input": "{\"passage_id\": \"wiki-12\", \"original_text\": \"Anarchism is a political philosophy and movement that is skeptical of all justifications for authority and seeks to abolish the institutions it claims maintain unnecessary coercion and hierarchy. Anarchism advocates for the replacement of the state with stateless societies and voluntary free associations.\", \"variant_text\": \"Anarchism is a political philosophy and movement that is skeptical of all justifications for authority and seeks to abolish the institutions it claims maintain unnecessary coercion and hierarchy. Anarchism advocates for the replacement of the state with stateless societies and voluntary free associations.\"}",
+          "output": "true",
+          "metadata_edit_type": "control",
+          "metadata_source": "wikipedia-synthetic",
+          "metadata_domain": "encyclopedia",
+          "metadata_passage_id": "wiki-12",
+          "metadata_original_length_words": 50,
+          "metadata_variant_length_words": 50,
+          "metadata_edit_distance_jaccard": 1.0,
+          "metadata_is_near_duplicate": "true"
+        },
+        {
+          "input": "{\"passage_id\": \"wiki-12\", \"original_text\": \"Anarchism is a political philosophy and movement that is skeptical of all justifications for authority and seeks to abolish the institutions it claims maintain unnecessary coercion and hierarchy. Anarchism advocates for the replacement of the state with stateless societies and voluntary free associations.\", \"variant_text\": \"The foundation of modern democracy emerged from Enlightenment thinking. Anarchism is a political philosophy and movement that is skeptical of all justifications for authority and seeks to abolish the institutions it claims maintain unnecessary coercion and hierarchy. Anarchism advocates for the replacement of the state with stateless societies and voluntary free associations.\"}",
+          "output": "true",
+          "metadata_edit_type": "insertion",
+          "metadata_source": "wikipedia-synthetic",
+          "metadata_domain": "encyclopedia",
+          "metadata_passage_id": "wiki-12",
+          "metadata_original_length_words": 50,
+          "metadata_variant_length_words": 65,
+          "metadata_edit_distance_jaccard": 0.8235,
+          "metadata_is_near_duplicate": "true"
+        },
+        {
+          "input": "{\"passage_id\": \"wiki-12\", \"original_text\": \"Anarchism is a political philosophy and movement that is skeptical of all justifications for authority and seeks to abolish the institutions it claims maintain unnecessary coercion and hierarchy. Anarchism advocates for the replacement of the state with stateless societies and voluntary free associations.\", \"variant_text\": \"Isaac Newton was an English mathematician, physicist, astronomer and author who is widely recognized as one of the most influential scientists of all time. He developed the theory of gravity and the laws of motion.\"}",
+          "output": "false",
+          "metadata_edit_type": "negative",
+          "metadata_source": "wikipedia-synthetic",
+          "metadata_domain": "encyclopedia",
+          "metadata_passage_id": "wiki-12",
+          "metadata_original_length_words": 50,
+          "metadata_variant_length_words": 35,
+          "metadata_edit_distance_jaccard": 0.1538,
+          "metadata_is_near_duplicate": "false"
+        }
+      ]
+    },
+    {
+      "dataset": "quora-duplicates",
+      "examples": [
+        {
+          "input": "{\"sentence1\": \"What is the best way to learn Python?\", \"sentence2\": \"How can I learn Python programming effectively?\"}",
+          "output": "true",
+          "metadata_edit_type": "paraphrase",
+          "metadata_source": "quora-duplicates",
+          "metadata_domain": "questions",
+          "metadata_original_length_words": 7,
+          "metadata_variant_length_words": 6,
+          "metadata_edit_distance_jaccard": 0.5714,
+          "metadata_is_near_duplicate": "true"
+        },
+        {
+          "input": "{\"sentence1\": \"What is machine learning?\", \"sentence2\": \"How do I cook pasta?\"}",
+          "output": "false",
+          "metadata_edit_type": "negative",
+          "metadata_source": "quora-duplicates",
+          "metadata_domain": "questions",
+          "metadata_original_length_words": 4,
+          "metadata_variant_length_words": 4,
+          "metadata_edit_distance_jaccard": 0.0,
+          "metadata_is_near_duplicate": "false"
+        }
+      ]
+    }
+  ]
+}

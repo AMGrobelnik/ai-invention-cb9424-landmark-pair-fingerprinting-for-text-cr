@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "objective": "Benchmark landmark-pair fingerprinting vs MinHash/SimHash for near-duplicate detection",
+    "note": "Demo subset with 3 examples per dataset",
+    "datasets_evaluated": [
+      "GLUE_MRPC",
+      "Synthetic_Structural_Edits"
+    ]
+  },
+  "datasets": [
+    {
+      "dataset": "glue_mrpc",
+      "examples": [
+        {
+          "input": "{\"sentence1\": \"Amrozi accused his brother , whom he called \\\" the witness \\\" , of deliberately distorting his evidence .\", \"sentence2\": \"Referring to him as only \\\" the witness \\\" , Amrozi accused his brother of deliberately distorting his evidence .\"}",
+          "output": "1",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_row_index": 0,
+          "metadata_task_type": "binary_classification",
+          "metadata_source": "glue_mrpc",
+          "predict_landmark_pair": "0.0417",
+          "predict_minhash_jaccard": "0.5938",
+          "predict_minhash_containment": "0.7755",
+          "predict_simhash": "0.8281",
+          "predict_landmark_pair_no_delta": "0.1905"
+        },
+        {
+          "input": "{\"sentence1\": \"Yucaipa owned Dominick 's before selling the chain to Safeway in 1998 for $ 2.5 billion .\", \"sentence2\": \"Yucaipa bought Dominick 's in 1995 for $ 693 million and sold it to Safeway for $ 1.8 billion in 1998 .\"}",
+          "output": "0",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_row_index": 1,
+          "metadata_task_type": "binary_classification",
+          "metadata_source": "glue_mrpc",
+          "predict_landmark_pair": "0.0",
+          "predict_minhash_jaccard": "0.25",
+          "predict_minhash_containment": "0.4118",
+          "predict_simhash": "0.5938",
+          "predict_landmark_pair_no_delta": "0.0417"
+        },
+        {
+          "input": "{\"sentence1\": \"They had published an advertisement on the Internet on June 10 , offering the cargo for sale , he added .\", \"sentence2\": \"On June 10 , the ship 's owners had published an advertisement on the Internet , offering the explosives for sale .\"}",
+          "output": "1",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_row_index": 2,
+          "metadata_task_type": "binary_classification",
+          "metadata_source": "glue_mrpc",
+          "predict_landmark_pair": "0.0714",
+          "predict_minhash_jaccard": "0.4922",
+          "predict_minhash_containment": "0.693",
+          "predict_simhash": "0.5938",
+          "predict_landmark_pair_no_delta": "0.1111"
+        }
+      ]
+    },
+    {
+      "dataset": "synthetic_structural_edits",
+      "examples": [
+        {
+          "input": "{\"sentence1\": \"The report was released on Monday morning. The proposal was met with mixed reactions. Sources familiar with the matter confirmed. A statement was issued by the press office. Sources familiar with the matter confirmed. The meeting took place in Washington D.C. According to a spokesperson for the company. Negotiations are Amrozi accused his brother , whom he called \\\" the witness \\\" , of deliberately distorting his evidence .\", \"sentence2\": \"The report was released on Monday morning. The proposal was met with mixed reactions. Sources familiar with the matter confirmed. A statement was issued by the press office. Sources familiar with the matter confirmed. The meeting took place in Washington D.C. According to a spokesperson for the company. Negotiations are Referring to him as only \\\" the witness \\\" , Amrozi accused his brother of deliberately distorting his evidence .\"}",
+          "output": "1",
+          "metadata_edit_type": "prepend",
+          "metadata_original_pair_id": "0",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_source": "synthetic_structural_edits",
+          "predict_landmark_pair": "0.5224",
+          "predict_minhash_jaccard": "0.7656",
+          "predict_minhash_containment": "0.8733",
+          "predict_simhash": "0.9375",
+          "predict_landmark_pair_no_delta": "0.5667"
+        },
+        {
+          "input": "{\"sentence1\": \"Amrozi accused his brother , whom he called \\\" the witness \\\" , of deliberately distorting his evidence . A statement was issued by the press office. Officials declined to comment on the matter. The bill was signed into law last Thursday. Results are expected to be announced soon. The committee approved the measure unanimously. The decision was made after months of talks. The organization announced its plans last week. Officials declined to comment on the matter. The report was released on Monday morning. The meeting took place in Washington D.C. The meeting took place in Washington D.C. The agency confirmed the details on Friday. Sources familiar with the matter confirmed. Analysts believe the trend will continue. The meeting\", \"sentence2\": \"Referring to him as only \\\" the witness \\\" , Amrozi accused his brother of deliberately distorting his evidence . A statement was issued by the press office. Officials declined to comment on the matter. The bill was signed into law last Thursday. Results are expected to be announced soon. The committee approved the measure unanimously. The decision was made after months of talks. The organization announced its plans last week. Officials declined to comment on the matter. The report was released on Monday morning. The meeting took place in Washington D.C. The meeting took place in Washington D.C. The agency confirmed the details on Friday. Sources familiar with the matter confirmed. Analysts believe the trend will continue. The meeting\"}",
+          "output": "1",
+          "metadata_edit_type": "append",
+          "metadata_original_pair_id": "0",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_source": "synthetic_structural_edits",
+          "predict_landmark_pair": "0.3721",
+          "predict_minhash_jaccard": "0.8516",
+          "predict_minhash_containment": "0.9246",
+          "predict_simhash": "0.9531",
+          "predict_landmark_pair_no_delta": "0.6286"
+        },
+        {
+          "input": "{\"sentence1\": \"Amrozi accused his brother , whom he called \\\" The proposal was met with mixed reactions. Residents expressed concerns about the project. The bill was signed into law last Thursday. The meeting took place in Washington D.C. The bill the witness \\\" , of deliberately distorting his evidence .\", \"sentence2\": \"Referring to him as only \\\" the witness \\\" , Amrozi accused his brother of deliberately distorting his evidence .\"}",
+          "output": "1",
+          "metadata_edit_type": "insert",
+          "metadata_original_pair_id": "0",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_source": "synthetic_structural_edits",
+          "predict_landmark_pair": "0.0154",
+          "predict_minhash_jaccard": "0.2578",
+          "predict_minhash_containment": "0.7193",
+          "predict_simhash": "0.75",
+          "predict_landmark_pair_no_delta": "0.0312"
+        }
+      ]
+    }
+  ]
+}
