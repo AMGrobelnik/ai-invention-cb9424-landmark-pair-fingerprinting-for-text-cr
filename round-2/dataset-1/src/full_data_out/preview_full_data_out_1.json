@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "description": "Near-duplicate text passage detection benchmark",
+    "sources": [
+      "wikipedia-synthetic",
+      "quora-duplicates"
+    ],
+    "edit_types": [
+      "insertion",
+      "deletion",
+      "embedding"
+    ],
+    "schema_fields": {
+      "input": "JSON string with original_text and variant_text (or sentence1/sentence2)",
+      "output": "'true' if near-duplicate, 'false' otherwise",
+      "metadata_edit_type": "type of structural edit applied",
+      "metadata_edit_distance_jaccard": "token-level Jaccard similarity between texts"
+    },
+    "chosen_dataset": "wikipedia-synthetic",
+    "reason": "Long passages (400 words) with controlled structural edits (insertion/deletion/embedding/reorder/control) — ideal for MinHash near-duplicate passage detection. Quora dataset excluded: questions are 8-..."
+  },
+  "datasets": [
+    {
+      "dataset": "wikipedia-synthetic",
+      "examples": [
+        {
+          "input": "{\"passage_id\": \"wiki-12\", \"original_text\": \"Anarchism is a political philosophy and movement that is skeptical of all justifications for authority and seeks to abolish the institutions it claims maint...",
+          "output": "true",
+          "metadata_edit_type": "insertion",
+          "metadata_source": "wikipedia-synthetic",
+          "metadata_domain": "encyclopedia",
+          "metadata_passage_id": "wiki-12",
+          "metadata_original_length_words": 400,
+          "metadata_variant_length_words": 480,
+          "metadata_edit_distance_jaccard": 0.8384,
+          "metadata_is_near_duplicate": "true"
+        },
+        {
+          "input": "{\"passage_id\": \"wiki-12\", \"original_text\": \"Anarchism is a political philosophy and movement that is skeptical of all justifications for authority and seeks to abolish the institutions it claims maint...",
+          "output": "true",
+          "metadata_edit_type": "control",
+          "metadata_source": "wikipedia-synthetic",
+          "metadata_domain": "encyclopedia",
+          "metadata_passage_id": "wiki-12",
+          "metadata_original_length_words": 400,
+          "metadata_variant_length_words": 400,
+          "metadata_edit_distance_jaccard": 1.0,
+          "metadata_is_near_duplicate": "true"
+        },
+        {
+          "input": "{\"passage_id\": \"wiki-12\", \"original_text\": \"Anarchism is a political philosophy and movement that is skeptical of all justifications for authority and seeks to abolish the institutions it claims maint...",
+          "output": "true",
+          "metadata_edit_type": "embedding",
+          "metadata_source": "wikipedia-synthetic",
+          "metadata_domain": "encyclopedia",
+          "metadata_passage_id": "wiki-12",
+          "metadata_original_length_words": 400,
+          "metadata_variant_length_words": 562,
+          "metadata_edit_distance_jaccard": 0.75,
+          "metadata_is_near_duplicate": "true"
+        }
+      ]
+    }
+  ]
+}

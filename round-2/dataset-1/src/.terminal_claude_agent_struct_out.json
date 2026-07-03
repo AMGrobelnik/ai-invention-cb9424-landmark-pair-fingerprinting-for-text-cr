@@ -1,0 +1,22 @@
+{
+  "title": "Wikipedia Near-Duplicate Passage Benchmark",
+  "layman_summary": "A labeled dataset of 20,000 Wikipedia passage pairs for testing near-duplicate text detection, built by applying five structural edits (insertion, deletion, embedding, reorder, control) plus random negative pairs.",
+  "summary": "Dataset: wikipedia-synthetic. Source: 2,000 English Wikipedia articles (400 words each, streamed from wikimedia/wikipedia 20231101.en). Construction: for each source passage, 5 near-duplicate variants are generated via controlled structural edits — (1) insertion: boilerplate prepended; (2) deletion: middle paragraphs removed; (3) embedding: surrounded by boilerplate; (4) reorder: adjacent paragraphs swapped; (5) control: identical copy — plus 5 random negative pairs from unrelated articles. Total: 20,000 labeled pairs (10,000 positive near-duplicates, 10,000 negatives). Schema: each example has `input` (JSON string with passage_id, original_text, variant_text), `output` ('true'/'false'), and metadata fields (metadata_edit_type, metadata_source, metadata_domain, metadata_original_length_words, metadata_variant_length_words, metadata_edit_distance_jaccard, metadata_is_near_duplicate). The dataset directly evaluates MinHash landmark-pair fingerprinting: control pairs have Jaccard=1.0, structural edits produce Jaccard 0.6-0.9 (measuring robustness), negatives have Jaccard near 0.0 (measuring specificity). Split into two 55MB parts (10,000 examples each) under full_data_out/. Validated against exp_sel_data_out.json schema. LLM cost: $0.",
+  "out_expected_files": {
+    "script": "data.py",
+    "datasets": [
+      {
+        "full": [
+          "full_data_out/full_data_out_1.json",
+          "full_data_out/full_data_out_2.json"
+        ],
+        "mini": "mini_data_out.json",
+        "preview": "preview_data_out.json"
+      }
+    ]
+  },
+  "upload_ignore_regexes": [
+    "(^|/)temp/",
+    "(^|/)\\.venv/"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "title": "GLUE MRPC Paraphrase Pairs for Near-Duplicate Detection",
+  "layman_summary": "Downloads the GLUE MRPC benchmark (4,076 labeled sentence pairs from news articles) where paraphrase pairs serve as near-duplicates with high word overlap — ideal ground truth for evaluating MinHash similarity detection.",
+  "summary": "Dataset: GLUE MRPC (Microsoft Research Paraphrase Corpus), sourced from nyu-mll/glue on HuggingFace (420,727 downloads). Contains 4,076 sentence pairs from news articles labeled 1=paraphrase (near-duplicate) or 0=non-paraphrase. 67.5% positive rate (2,753 paraphrase pairs). Paraphrase pairs share high n-gram overlap — the direct signal MinHash/Jaccard similarity measures via shingle sets. Non-paraphrase pairs serve as true negatives. Provenance: Dolan & Brockett 2005; incorporated into GLUE benchmark (Wang et al. 2019 ICLR). Each example encodes both sentences as JSON in the input field and the binary label as the output field, with metadata_task_type=binary_classification, metadata_source=glue_mrpc, and metadata_label_meaning. Schema validated against exp_sel_data_out. Files: full_data_out.json (2.3MB, 4,076 examples), mini_data_out.json (3 examples), preview_data_out.json (3 truncated examples). QQP was considered but MRPC was chosen because its news-domain paraphrase pairs have higher lexical overlap, longer texts (better shingling), and are the canonical benchmark for the near-duplicate detection evaluation task.",
+  "out_expected_files": {
+    "script": "data.py",
+    "datasets": [
+      {
+        "full": ["full_data_out.json"],
+        "mini": "mini_data_out.json",
+        "preview": "preview_data_out.json"
+      }
+    ]
+  },
+  "upload_ignore_regexes": [
+    "(^|/)temp/",
+    "(^|/)\\.venv/",
+    "(^|/)__pycache__/",
+    "(^|/)logs/",
+    "(^|/)full_full_data_out\\.json$",
+    "(^|/)mini_full_data_out\\.json$",
+    "(^|/)preview_full_data_out\\.json$"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Landmark-Pair Fingerprinting vs MinHash/SimHash Benchmark",
+  "layman_summary": "We test a Shazam-inspired text fingerprinting method that encodes pairs of important word positions against standard near-duplicate detection baselines (MinHash and SimHash) on paraphrase pairs and structurally-edited text.",
+  "summary": "Experiment: Landmark-Pair Fingerprinting vs MinHash/SimHash for Near-Duplicate Detection on GLUE MRPC.\n\nDatasets: GLUE MRPC (4,076 sentence pairs, 67.5% paraphrase) + 1,100 synthetic structural-edit pairs (prepend/append/insert edits on positive MRPC pairs).\n\nMethods implemented:\n1. landmark_pair: Shazam-inspired method — extract top-K salient tokens (sliding-window TF-IDF + NMS), hash pairs (anchor, target, delta) within a lookahead window W. Jaccard over fingerprint hash sets.\n2. landmark_pair_no_delta: Ablation without positional offset (delta=0).\n3. minhash_jaccard: datasketch MinHash Jaccard on 5-char shingles, 128 permutations.\n4. minhash_containment: MinHash-estimated containment (|A∩B|/min(|A|,|B|)).\n5. simhash: Custom 64-bit SimHash via TF-IDF projection onto random hyperplanes.\n\nKey results (recall@precision≥0.90):\n- MRPC: landmark_pair=0.109, minhash_jaccard=0.609, minhash_containment=0.000, simhash=0.000\n- Synthetic: landmark_pair=0.920, minhash_containment=1.000, minhash_jaccard=0.929, simhash=0.000\n\nAblations:\n- Positional offset: SIGNIFICANT (z=-4.68, p≈0.0) — offset hurts performance vs no-delta (landmark_pair_no_delta outperforms landmark_pair on MRPC; offset adds noise at sentence length)\n- Density K: best at K=5 (diminishing returns at higher K)\n- Lookahead W: best at W=10\n\nVerdict: DISCONFIRM — Landmark-pair does not outperform MinHash containment (containment=1.000 vs landmark_pair=0.920 on synthetic). Structural edits with shared filler text make containment trivially effective. The positional offset is load-bearing but in a negative direction at sentence scale.\n\nTiming (5000-passage benchmark): landmark_pair indexing=15.4s, minhash_jaccard=1.9s, simhash=0.4s. Landmark-pair is ~8x slower than MinHash for indexing.\n\nOutput files: method_out.json (4.7MB, schema exp_gen_sol_out validated) with per-example predict_* scores for all 5 methods across both datasets.",
+  "out_expected_files": {
+    "script": "method.py",
+    "full_output": "full_method_out.json",
+    "mini_output": "mini_method_out.json",
+    "preview_output": "preview_method_out.json"
+  },
+  "upload_ignore_regexes": [
+    "(^|/)logs/"
+  ]
+}

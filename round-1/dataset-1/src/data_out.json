@@ -1,0 +1,36 @@
+{
+  "datasets": [
+    {
+      "id": "glue_mrpc",
+      "name": "GLUE MRPC (Microsoft Research Paraphrase Corpus)",
+      "source": "nyu-mll/glue",
+      "config": "mrpc",
+      "hf_downloads": 420727,
+      "description": "4,076 sentence pairs labeled as paraphrase (1) or non-paraphrase (0), extracted from news. Paraphrase pairs are near-duplicates with high lexical overlap — ideal ground truth for MinHash evaluation.",
+      "provenance": "Dolan & Brockett 2005; part of GLUE benchmark (Wang et al. 2019 ICLR). Canonical NLP benchmark with 420K HF downloads.",
+      "file": "temp/datasets/full_glue_mrpc.json",
+      "num_rows": 4076,
+      "fields": ["sentence1", "sentence2", "label", "idx"],
+      "label_distribution": {"paraphrase_pairs": 2753, "non_paraphrase_pairs": 1323, "paraphrase_rate": 0.675},
+      "size_mb": 1.3,
+      "relevance": "Paraphrase pairs are structural near-duplicates; MinHash should assign high Jaccard similarity to label=1 pairs and low to label=0 — provides direct binary evaluation signal."
+    },
+    {
+      "id": "glue_qqp",
+      "name": "GLUE QQP (Quora Question Pairs)",
+      "source": "nyu-mll/glue",
+      "config": "qqp",
+      "hf_downloads": 420727,
+      "description": "5,000 question pairs (sampled from 363,846 total train) labeled as duplicate (1) or non-duplicate (0). Duplicate questions are semantic near-duplicates with varying surface-form overlap.",
+      "provenance": "Quora 2017 release (quoradata.quora.com); incorporated into GLUE benchmark. 363K total train examples, widely cited.",
+      "file": "temp/datasets/full_glue_qqp.json",
+      "num_rows": 5000,
+      "fields": ["question1", "question2", "label", "idx"],
+      "label_distribution": {"duplicate_pairs": 1838, "non_duplicate_pairs": 3162, "duplicate_rate": 0.368},
+      "size_mb": 1.0,
+      "relevance": "Duplicate questions are semantic near-duplicates; tests MinHash on shorter texts with more paraphrase variation than MRPC — complements MRPC's high-overlap pairs."
+    }
+  ],
+  "selection_rationale": "Both datasets provide labeled near-duplicate/non-duplicate text pairs from canonical NLP benchmarks (GLUE, 420K HF downloads). MRPC covers high-overlap sentence pairs from news; QQP covers shorter question-style near-duplicates with more paraphrase. Together they give MinHash evaluation signal across two distinct near-duplicate regimes. PAN-PC-11 (1.7GB RAR from Zenodo) was excluded due to complex multi-step extraction; Wikipedia passages excluded for lack of ground-truth duplicate labels.",
+  "upload_ignore_regexes": ["(^|/)temp/", "(^|/)\\.venv/", "(^|/)__pycache__/"]
+}

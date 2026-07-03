@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "description": "GLUE MRPC (Microsoft Research Paraphrase Corpus) for MinHash near-duplicate detection evaluation. Sentence pairs labeled 1=paraphrase (near-duplicate, high lexical overlap) or 0=non-paraphrase.",
+    "dataset": "glue_mrpc",
+    "source": "nyu-mll/glue config=mrpc (Dolan & Brockett 2005; GLUE benchmark Wang et al. 2019)",
+    "num_rows": 4076,
+    "positive_rate": 0.675,
+    "relevance": "Paraphrase pairs share high n-gram overlap — direct MinHash/Jaccard evaluation signal"
+  },
+  "datasets": [
+    {
+      "dataset": "glue_mrpc",
+      "examples": [
+        {
+          "input": "{\"sentence1\": \"Amrozi accused his brother , whom he called \\\" the witness \\\" , of deliberately distorting his evidence .\", \"sentence2\": \"Referring to him as only \\\" the witness \\\" , Amrozi accused his...",
+          "output": "1",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_row_index": 0,
+          "metadata_task_type": "binary_classification",
+          "metadata_source": "glue_mrpc"
+        },
+        {
+          "input": "{\"sentence1\": \"Yucaipa owned Dominick 's before selling the chain to Safeway in 1998 for $ 2.5 billion .\", \"sentence2\": \"Yucaipa bought Dominick 's in 1995 for $ 693 million and sold it to Safeway for...",
+          "output": "0",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_row_index": 1,
+          "metadata_task_type": "binary_classification",
+          "metadata_source": "glue_mrpc"
+        },
+        {
+          "input": "{\"sentence1\": \"They had published an advertisement on the Internet on June 10 , offering the cargo for sale , he added .\", \"sentence2\": \"On June 10 , the ship 's owners had published an advertisement ...",
+          "output": "1",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_row_index": 2,
+          "metadata_task_type": "binary_classification",
+          "metadata_source": "glue_mrpc"
+        }
+      ]
+    }
+  ]
+}

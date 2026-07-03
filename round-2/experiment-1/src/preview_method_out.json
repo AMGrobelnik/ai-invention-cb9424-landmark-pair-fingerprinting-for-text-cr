@@ -1,0 +1,479 @@
+{
+  "metadata": {
+    "objective": "Benchmark landmark-pair fingerprinting vs MinHash/SimHash for near-duplicate detection",
+    "elapsed_seconds": 63.8,
+    "num_cpus": 4,
+    "datasets_evaluated": [
+      "GLUE_MRPC",
+      "Synthetic_Structural_Edits"
+    ],
+    "mrpc_results": {
+      "num_pairs": 4076,
+      "num_positive": 2753,
+      "num_negative": 1323,
+      "landmark_pair": {
+        "auc_pr": 0.7898,
+        "recall_at_prec90": 0.1093,
+        "threshold_at_prec90": 0.34,
+        "f1_optimal": 0.8063,
+        "threshold_at_f1_optimal": 0.0,
+        "precision_recall_curve": [
+          [
+            0.0,
+            0.6754,
+            1.0
+          ],
+          [
+            0.0192,
+            0.7242,
+            0.8002
+          ],
+          [
+            0.0222,
+            0.7249,
+            0.7933
+          ]
+        ]
+      },
+      "minhash_jaccard": {
+        "auc_pr": 0.8529,
+        "recall_at_prec90": 0.3647,
+        "threshold_at_prec90": 0.5469,
+        "f1_optimal": 0.8134,
+        "threshold_at_f1_optimal": 0.1953,
+        "precision_recall_curve": [
+          [
+            0.0547,
+            0.6754,
+            1.0
+          ],
+          [
+            0.0859,
+            0.6755,
+            0.9996
+          ],
+          [
+            0.1016,
+            0.676,
+            0.9996
+          ]
+        ]
+      },
+      "minhash_containment": {
+        "auc_pr": 0.8078,
+        "recall_at_prec90": 0.0,
+        "threshold_at_prec90": 1.0,
+        "f1_optimal": 0.814,
+        "threshold_at_f1_optimal": 0.3378,
+        "precision_recall_curve": [
+          [
+            0.1079,
+            0.6754,
+            1.0
+          ],
+          [
+            0.2761,
+            0.6827,
+            0.9909
+          ],
+          [
+            0.3172,
+            0.6912,
+            0.9829
+          ]
+        ]
+      },
+      "simhash": {
+        "auc_pr": 0.8277,
+        "recall_at_prec90": 0.2456,
+        "threshold_at_prec90": 0.8281,
+        "f1_optimal": 0.8104,
+        "threshold_at_f1_optimal": 0.5625,
+        "precision_recall_curve": [
+          [
+            0.4219,
+            0.6754,
+            1.0
+          ],
+          [
+            0.4375,
+            0.6755,
+            0.9996
+          ],
+          [
+            0.4531,
+            0.6758,
+            0.9996
+          ]
+        ]
+      },
+      "landmark_pair_no_delta": {
+        "auc_pr": 0.8059,
+        "recall_at_prec90": 0.1518,
+        "threshold_at_prec90": 0.3871,
+        "f1_optimal": 0.8063,
+        "threshold_at_f1_optimal": 0.0,
+        "precision_recall_curve": [
+          [
+            0.0,
+            0.6754,
+            1.0
+          ],
+          [
+            0.0196,
+            0.7187,
+            0.854
+          ],
+          [
+            0.0227,
+            0.7199,
+            0.8496
+          ]
+        ]
+      }
+    },
+    "synthetic_results": {
+      "num_pairs": 1100,
+      "num_positive": 900,
+      "num_negative": 200,
+      "edit_types": [
+        "prepend",
+        "append",
+        "insert"
+      ],
+      "landmark_pair": {
+        "auc_pr": 0.9855,
+        "recall_at_prec90": 0.92,
+        "threshold_at_prec90": 0.0116,
+        "f1_optimal": 0.9583,
+        "threshold_at_f1_optimal": 0.0116,
+        "precision_recall_curve": [
+          [
+            0.0,
+            0.8182,
+            1.0
+          ],
+          [
+            0.0135,
+            1.0,
+            0.8989
+          ],
+          [
+            0.0156,
+            1.0,
+            0.87
+          ]
+        ]
+      },
+      "minhash_jaccard": {
+        "auc_pr": 0.9999,
+        "recall_at_prec90": 1.0,
+        "threshold_at_prec90": 0.0078,
+        "f1_optimal": 0.9967,
+        "threshold_at_f1_optimal": 0.0469,
+        "precision_recall_curve": [
+          [
+            0.0,
+            0.8182,
+            1.0
+          ],
+          [
+            0.0156,
+            0.9474,
+            1.0
+          ],
+          [
+            0.0312,
+            0.9804,
+            1.0
+          ]
+        ]
+      },
+      "minhash_containment": {
+        "auc_pr": 1.0,
+        "recall_at_prec90": 1.0,
+        "threshold_at_prec90": 0.0157,
+        "f1_optimal": 0.9994,
+        "threshold_at_f1_optimal": 0.114,
+        "precision_recall_curve": [
+          [
+            0.0,
+            0.8182,
+            1.0
+          ],
+          [
+            0.0185,
+            0.9346,
+            1.0
+          ],
+          [
+            0.0327,
+            0.9534,
+            1.0
+          ]
+        ]
+      },
+      "simhash": {
+        "auc_pr": 0.9937,
+        "recall_at_prec90": 0.9933,
+        "threshold_at_prec90": 0.5156,
+        "f1_optimal": 0.9559,
+        "threshold_at_f1_optimal": 0.5625,
+        "precision_recall_curve": [
+          [
+            0.3281,
+            0.8182,
+            1.0
+          ],
+          [
+            0.3594,
+            0.8189,
+            1.0
+          ],
+          [
+            0.375,
+            0.8197,
+            1.0
+          ]
+        ]
+      },
+      "landmark_pair_no_delta": {
+        "auc_pr": 0.9877,
+        "recall_at_prec90": 0.9322,
+        "threshold_at_prec90": 0.0116,
+        "f1_optimal": 0.9649,
+        "threshold_at_f1_optimal": 0.0116,
+        "precision_recall_curve": [
+          [
+            0.0,
+            0.8182,
+            1.0
+          ],
+          [
+            0.0139,
+            1.0,
+            0.9133
+          ],
+          [
+            0.0161,
+            1.0,
+            0.8856
+          ]
+        ]
+      }
+    },
+    "ablations": {
+      "positional_offset": {
+        "with_delta_recall_prec90": 0.1093,
+        "without_delta_recall_prec90": 0.1518,
+        "z_statistic": -4.6802,
+        "p_value": 0.0,
+        "ci_95_difference": [
+          -0.0603,
+          -0.0247
+        ],
+        "verdict": "SIGNIFICANT"
+      },
+      "landmark_density": {
+        "by_k": {
+          "k=5": {
+            "recall_at_prec90": 0.0983,
+            "auc_pr": 0.7919,
+            "avg_landmarks_per_passage": 4.7
+          },
+          "k=10": {
+            "recall_at_prec90": 0.0549,
+            "auc_pr": 0.7999,
+            "avg_landmarks_per_passage": 5.5
+          },
+          "k=15": {
+            "recall_at_prec90": 0.0549,
+            "auc_pr": 0.7999,
+            "avg_landmarks_per_passage": 5.5
+          },
+          "k=20": {
+            "recall_at_prec90": 0.0549,
+            "auc_pr": 0.7999,
+            "avg_landmarks_per_passage": 5.5
+          },
+          "k=30": {
+            "recall_at_prec90": 0.0549,
+            "auc_pr": 0.7999,
+            "avg_landmarks_per_passage": 5.5
+          }
+        }
+      },
+      "lookahead_window": {
+        "by_w": {
+          "w=10": {
+            "recall_at_prec90": 0.0867,
+            "auc_pr": 0.7954,
+            "avg_fp_size": 10.1
+          },
+          "w=20": {
+            "recall_at_prec90": 0.0549,
+            "auc_pr": 0.7999,
+            "avg_fp_size": 15.3
+          },
+          "w=50": {
+            "recall_at_prec90": 0.0607,
+            "auc_pr": 0.8043,
+            "avg_fp_size": 16.1
+          },
+          "w=100": {
+            "recall_at_prec90": 0.0607,
+            "auc_pr": 0.8043,
+            "avg_fp_size": 16.1
+          }
+        }
+      }
+    },
+    "timing": {
+      "landmark_pair": {
+        "indexing_time_seconds": 0.83,
+        "corpus_size": 5000,
+        "median_query_latency_ms": 3.56
+      },
+      "minhash_jaccard": {
+        "indexing_time_seconds": 13.28,
+        "corpus_size": 5000,
+        "median_query_latency_ms": 3.96
+      },
+      "simhash": {
+        "indexing_time_seconds": 0.69,
+        "corpus_size": 5000,
+        "median_query_latency_ms": 0.83
+      }
+    },
+    "implementation_details": {
+      "landmark_extraction": {
+        "method": "Sliding-window TF-IDF local scoring + non-maximum suppression",
+        "window_size": 10,
+        "nms_radius": 3,
+        "default_top_k": 15
+      },
+      "landmark_pair_hashing": {
+        "hash_function": "SHA-256 truncated to 32 bits",
+        "default_lookahead_window": 20,
+        "delta_quantization": "nearest 5 tokens"
+      },
+      "baselines": {
+        "minhash_jaccard": {
+          "library": "datasketch",
+          "num_perm": 128,
+          "shingle_size": 5
+        },
+        "minhash_containment": {
+          "library": "datasketch",
+          "num_perm": 128
+        },
+        "simhash": {
+          "bits": 64,
+          "vectorizer": "sklearn TfidfVectorizer"
+        }
+      }
+    },
+    "key_findings": {
+      "landmark_pair_beats_containment_synthetic": false,
+      "recall_delta_vs_containment_pp_synthetic": -8.0,
+      "positional_offset_is_load_bearing": true,
+      "best_landmark_density_k": "k=5",
+      "best_lookahead_window_w": "w=10",
+      "verdict": "DISCONFIRM",
+      "mrpc_landmark_pair_recall_at_prec90": 0.1093,
+      "mrpc_minhash_containment_recall_at_prec90": 0.0,
+      "synthetic_landmark_pair_recall_at_prec90": 0.92,
+      "synthetic_minhash_containment_recall_at_prec90": 1.0
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "glue_mrpc",
+      "examples": [
+        {
+          "input": "{\"sentence1\": \"Amrozi accused his brother , whom he called \\\" the witness \\\" , of deliberately distorting his evidence .\", \"sentence2\": \"Referring to him as only \\\" the witness \\\" , Amrozi accused his...",
+          "output": "1",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_row_index": 0,
+          "metadata_task_type": "binary_classification",
+          "metadata_source": "glue_mrpc",
+          "predict_landmark_pair": "0.0417",
+          "predict_minhash_jaccard": "0.5938",
+          "predict_minhash_containment": "0.7755",
+          "predict_simhash": "0.8281",
+          "predict_landmark_pair_no_delta": "0.1905"
+        },
+        {
+          "input": "{\"sentence1\": \"Yucaipa owned Dominick 's before selling the chain to Safeway in 1998 for $ 2.5 billion .\", \"sentence2\": \"Yucaipa bought Dominick 's in 1995 for $ 693 million and sold it to Safeway for...",
+          "output": "0",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_row_index": 1,
+          "metadata_task_type": "binary_classification",
+          "metadata_source": "glue_mrpc",
+          "predict_landmark_pair": "0.0",
+          "predict_minhash_jaccard": "0.25",
+          "predict_minhash_containment": "0.4118",
+          "predict_simhash": "0.5938",
+          "predict_landmark_pair_no_delta": "0.0417"
+        },
+        {
+          "input": "{\"sentence1\": \"They had published an advertisement on the Internet on June 10 , offering the cargo for sale , he added .\", \"sentence2\": \"On June 10 , the ship 's owners had published an advertisement ...",
+          "output": "1",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_row_index": 2,
+          "metadata_task_type": "binary_classification",
+          "metadata_source": "glue_mrpc",
+          "predict_landmark_pair": "0.0714",
+          "predict_minhash_jaccard": "0.4922",
+          "predict_minhash_containment": "0.693",
+          "predict_simhash": "0.5938",
+          "predict_landmark_pair_no_delta": "0.1111"
+        }
+      ]
+    },
+    {
+      "dataset": "synthetic_structural_edits",
+      "examples": [
+        {
+          "input": "{\"sentence1\": \"The report was released on Monday morning. The proposal was met with mixed reactions. Sources familiar with the matter confirmed. A statement was issued by the press office. Sources fam...",
+          "output": "1",
+          "metadata_edit_type": "prepend",
+          "metadata_original_pair_id": "0",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_source": "synthetic_structural_edits",
+          "predict_landmark_pair": "0.5224",
+          "predict_minhash_jaccard": "0.7656",
+          "predict_minhash_containment": "0.8733",
+          "predict_simhash": "0.9375",
+          "predict_landmark_pair_no_delta": "0.5667"
+        },
+        {
+          "input": "{\"sentence1\": \"Amrozi accused his brother , whom he called \\\" the witness \\\" , of deliberately distorting his evidence . A statement was issued by the press office. Officials declined to comment on th...",
+          "output": "1",
+          "metadata_edit_type": "append",
+          "metadata_original_pair_id": "0",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_source": "synthetic_structural_edits",
+          "predict_landmark_pair": "0.3721",
+          "predict_minhash_jaccard": "0.8516",
+          "predict_minhash_containment": "0.9246",
+          "predict_simhash": "0.9531",
+          "predict_landmark_pair_no_delta": "0.6286"
+        },
+        {
+          "input": "{\"sentence1\": \"Amrozi accused his brother , whom he called \\\" The proposal was met with mixed reactions. Residents expressed concerns about the project. The bill was signed into law last Thursday. The...",
+          "output": "1",
+          "metadata_edit_type": "insert",
+          "metadata_original_pair_id": "0",
+          "metadata_label_meaning": "1=paraphrase(near-duplicate) 0=non-paraphrase",
+          "metadata_source": "synthetic_structural_edits",
+          "predict_landmark_pair": "0.0154",
+          "predict_minhash_jaccard": "0.2578",
+          "predict_minhash_containment": "0.7193",
+          "predict_simhash": "0.75",
+          "predict_landmark_pair_no_delta": "0.0312"
+        }
+      ]
+    }
+  ]
+}
